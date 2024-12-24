@@ -1,0 +1,15 @@
+
+spring:
+  application:
+    name: grpc-client-service-multi-instance-arm
+
+armeria:
+  ports:
+  - port: ${GRPC_SERVER_PORT:0}
+    protocols:
+    - HTTP
+
+properties:
+  eureka-url: http://localhost:8761/eureka/
+  app-name: ${spring.application.name}
+  instance-id: ${spring.application.name}:${random.uuid}
