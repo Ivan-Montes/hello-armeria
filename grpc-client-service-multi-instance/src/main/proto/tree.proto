@@ -1,0 +1,71 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+import "google/api/annotations.proto";
+
+package net.protobufs;
+
+option java_multiple_files = true;
+option java_package = "dev.protobufs";
+
+service TreeService {
+  rpc ListTrees (google.protobuf.Empty) returns (ListTreesResponse) {
+        option (google.api.http) = { get: "/api/v1/trees" };
+  }
+  rpc GetTree (GetTreeRequest) returns (TreeProto) {
+        option (google.api.http) = { get: "/api/v1/trees/{treeId}" };
+  }
+  rpc CreateTree (CreateTreeRequest) returns (TreeProto) {
+        option (google.api.http) = {
+            post: "/api/v1/trees"
+            body: "*"
+        };
+    }
+  rpc UpdateTree (UpdateTreeRequest) returns (TreeProto) {
+        option (google.api.http) = {
+            post: "/api/v1/trees/{treeId}"
+            body: "*"
+        };
+    }
+  rpc DeleteTree (DeleteTreeRequest) returns (DeleteTreeResponse) {
+        option (google.api.http) = {
+            delete: "/api/v1/trees/{treeId}"
+        };
+    }
+}
+
+message CreateTreeRequest {  
+  string kingdom = 1;
+  string family = 2;
+  string species = 3;
+}
+
+message GetTreeRequest {
+  int64 treeId = 1;
+}
+
+message ListTreesResponse {
+  repeated TreeProto trees = 1;
+}
+
+message UpdateTreeRequest {
+  int64 treeId = 1;
+  string kingdom = 2;
+  string family = 3;
+  string species = 4;
+}
+
+message DeleteTreeRequest {
+  int64 treeId = 1;
+}
+
+message DeleteTreeResponse {
+  bool result = 1;
+}
+
+message TreeProto {
+  int64 treeId = 1;
+  string kingdom = 2;
+  string family = 3;
+  string species = 4;
+}
