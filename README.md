@@ -54,7 +54,7 @@ curl -v -H "Content-Type: application/json" -d '{"treeId":"7952"}' http://localh
 curl -v -H "Content-Type: application/json" -d '{"kingdom":"arborus","family":"ent","species":"sheep"}' http://localhost:50052/net.protobufs.TreeService/CreateTree
 ```
 
-HTTP/JSON to gRPC transcoding is explicitly enabled using .enableHttpJsonTranscoding(). This allows the server to convert HTTP/JSON requests into gRPC requests and vice versa. This option is currently developed in grpc-server-transcoding and grpc-server-reactive-transcoding modules.
+HTTP/JSON to gRPC transcoding is explicitly enabled using .enableHttpJsonTranscoding(). This allows the server to convert HTTP/JSON requests into gRPC requests and vice versa. This option is currently developed in **grpc-server-transcoding** and **grpc-server-reactive-transcoding** modules.
 
 ```
 curl -v http://localhost:50053/api/v1/trees
@@ -70,9 +70,9 @@ It is possible to use a browser to call a service using the documentation featur
 http://localhost:8091/internal/docs
 ```
 
-There is a ready Eureka server necessary to check the compatibility with discovery services. The microservice grpc-service-multi-instances registers itself on Eureka and sends the gRPC number port. On the other hand, grpc-client-service-multi-instance exposes its endpoint but it doesn's have its own database, instead it uses a gRPC stub client to call the methods in grpc-service-multi-instances. Before doing so, it looks up the suitable hostname and port on the eureka-discovery microservice. So if you want to test this proof of concept (PoC), you should run the three components and call the port of grpc-client-service-multi-instance. In this case, It is used the dependency eureka client from Spring framework.
+There is a ready Eureka server necessary to check the compatibility with discovery services. The microservice **grpc-service-multi-instances** registers itself on Eureka and sends the gRPC number port. On the other hand, **grpc-client-service-multi-instance** exposes its endpoint but it doesn's have its own database, instead it uses a gRPC stub client to call the methods in grpc-service-multi-instances. Before doing so, it looks up the suitable hostname and port on the eureka-discovery microservice. So if you want to test this proof of concept (PoC), you should run the three components and call the port of grpc-client-service-multi-instance. In this case, It is used the dependency eureka client from Spring framework.
 
-Armeria has its own eureka dependecy, so I have created the same test environment but using this dependency. The microservicies are grpc-service-multi-instances-arm and grpc-client-service-multi-instance-arm. You could use the same Eureka server to check both of them.
+Armeria has its own eureka dependecy, so I have created the same test environment but using this dependency. The microservicies are **grpc-service-multi-instances-arm** and **grpc-client-service-multi-instance-arm**. You could use the same Eureka server to check both of them.
 
 ---
 
