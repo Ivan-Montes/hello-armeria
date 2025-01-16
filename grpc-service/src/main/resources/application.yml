@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: grpc-service
+armeria:
+  ports:
+  - port: 50051

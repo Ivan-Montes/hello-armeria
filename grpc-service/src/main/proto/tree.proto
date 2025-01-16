@@ -1,0 +1,52 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package net.protobufs;
+
+option java_multiple_files = true;
+option java_package = "dev.protobufs";
+
+service TreeService {
+  rpc CreateTree (CreateTreeRequest) returns (TreeProto) {}
+  rpc GetTree (GetTreeRequest) returns (TreeProto) {}
+  rpc ListTrees (google.protobuf.Empty) returns (ListTreesResponse) {}
+  rpc UpdateTree (UpdateTreeRequest) returns (TreeProto) {}
+  rpc DeleteTree (DeleteTreeRequest) returns (DeleteTreeResponse) {}
+}
+
+message CreateTreeRequest {  
+  string kingdom = 1;
+  string family = 2;
+  string species = 3;
+}
+
+message GetTreeRequest {
+  int64 treeId = 1;
+}
+
+message ListTreesResponse {
+  repeated TreeProto trees = 1;
+}
+
+message UpdateTreeRequest {
+  int64 treeId = 1;
+  string kingdom = 2;
+  string family = 3;
+  string species = 4;
+}
+
+message DeleteTreeRequest {
+  int64 treeId = 1;
+}
+
+message DeleteTreeResponse {
+  bool result = 1;
+}
+
+message TreeProto {
+  int64 treeId = 1;
+  string kingdom = 2;
+  string family = 3;
+  string species = 4;
+}
