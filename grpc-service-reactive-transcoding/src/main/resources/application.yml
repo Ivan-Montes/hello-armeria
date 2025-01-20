@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: grpc-service-reactive-transcoding
+
+server:
+  port: 50054
