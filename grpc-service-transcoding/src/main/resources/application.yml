@@ -1,0 +1,7 @@
+
+spring:
+  application:
+    name: grpc-service-transcoding
+armeria:
+  ports:
+  - port: 50053
