@@ -1,0 +1,12 @@
+
+spring:  
+  application:
+    name: rest-service-reactive
+
+server:
+  port: 8082
+
+armeria:
+  internal-services:
+    include: docs, health
+    port: 8092
