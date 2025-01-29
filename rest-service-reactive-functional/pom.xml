@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dev.ime</groupId>
+		<artifactId>hello-armeria</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>rest-service-reactive-functional</artifactId>
+	<name>rest-service-reactive-functional</name>
+	<description>Project for Spring Boot</description>
+	
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	
+	<properties>
+		<java.version>21</java.version>
+	</properties>
+	
+	<dependencies>
+	
+	  <dependency>
+		<groupId>com.linecorp.armeria</groupId>
+	    <artifactId>armeria-spring-boot3-webflux-starter</artifactId>
+	  </dependency>
+
+	  <dependency>
+	   	<groupId>com.linecorp.armeria</groupId>
+	    <artifactId>armeria-junit5</artifactId>
+	    <scope>test</scope>
+	  </dependency>	
+	  
+	  <dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-validation</artifactId>
+	  </dependency>		
+  
+	</dependencies>
+
+	<dependencyManagement>
+	  <dependencies>
+	    <dependency>
+	      <groupId>com.linecorp.armeria</groupId>
+	      <artifactId>armeria-bom</artifactId>
+	      <version>1.31.3</version>
+	      <type>pom</type>
+	      <scope>import</scope>
+	    </dependency>
+	    <dependency>
+	      <groupId>io.netty</groupId>
+	      <artifactId>netty-bom</artifactId>
+	      <version>4.1.115.Final</version>
+	      <type>pom</type>
+	      <scope>import</scope>
+	    </dependency>
+	  </dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			
+		</plugins>
+	</build>
+
+</project>

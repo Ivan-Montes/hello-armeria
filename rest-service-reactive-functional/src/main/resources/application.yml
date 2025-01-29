@@ -1,0 +1,12 @@
+
+spring:  
+  application:
+    name: rest-service-reactive-functional
+
+server:
+  port: 8083
+
+armeria:
+  internal-services:
+    include: docs, health
+    port: 8093
