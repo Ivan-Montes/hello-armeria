@@ -4,7 +4,6 @@
 Hanging out with [Spring](https://spring.io/) and [Armeria](https://armeria.dev/) 
 
 ### Components
-:rotating_light::no_entry:** IN CONSTRUCCTION**
 | Name | gRPC Port | Web Port | Docs |
 |-----|-----|-----|-----|
 | rest-service | x | 8081 | 8091 |
